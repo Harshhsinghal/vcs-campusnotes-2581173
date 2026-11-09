@@ -1,0 +1,6 @@
+Project Name: CampusNotes
+
+Purpose: To organize college study notes.
+
+Developer: Harsh Singhal
+URN: 2581173

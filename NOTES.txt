@@ -1,0 +1,7 @@
+CampusNotes - Study Notes
+
+Subject 1: Mathematics
+Subject 2: Programming
+Subject 3: Computer Science
+
+New Feature: Notes can now be shared with classmates.
