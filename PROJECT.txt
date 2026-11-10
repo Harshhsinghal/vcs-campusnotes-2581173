@@ -1,4 +1,4 @@
-Project Name: CampusNotes
+Project Name: CampusNote
 
 Purpose: To organize college study notes.
 
