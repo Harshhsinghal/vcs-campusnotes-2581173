@@ -22,3 +22,11 @@ Harsh Singhal
 
 URN: 2581173
 
+
+
+CampusNotes is a GitHub repository for organizing
+
+college study notes and project resources.
+
+It helps students manage academic materials.
+
