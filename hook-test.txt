@@ -1,1 +1,1 @@
-This test file passes the precommit hook.
+Precommit hook test passed.
