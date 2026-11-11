@@ -1,11 +1,29 @@
 #!/bin/sh
 
-git diff --cached --name-only --diff-filter=ACMR | grep -v '^\.githooks/' | while IFS= read -r file
-do
-    if git show ":$file" | grep -nE 'TODO|FIXME' >/dev/null; then
-        echo "ERROR: $file contains TODO or FIXME. Commit blocked."
-        exit 1
-    fi
-done
+found=0
+tmp=$(mktemp)
 
-exit $?
+git diff --cached --name-only --diff-filter=ACMR > "$tmp"
+
+while IFS= read -r file
+do
+    [ -n "$file" ] || continue
+
+    case "$file" in
+        .githooks/*) continue ;;
+    esac
+
+    if git show ":$file" | grep -nE 'TODO|FIXME' >/dev/null; then
+        echo "ERROR: $file contains TODO or FIXME."
+        found=1
+    fi
+done < "$tmp"
+
+rm -f "$tmp"
+
+if [ "$found" -ne 0 ]; then
+    echo "Commit blocked."
+    exit 1
+fi
+
+exit 0
